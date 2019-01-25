@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:sqlserver://localhost;database=yzukjc
+      username: sa
+      password: 520530
+      type: com.alibaba.druid.pool.DruidDataSource
+    secondary:
+      url: jdbc:sqlserver://localhost;database=zqkyxt
+      username: sa
+      password: 520530
+      type: com.alibaba.druid.pool.DruidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: false
+    hibernate:
+
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+         hibernate:
+         dialect: org.hibernate.dialect.2012SQLServerDialect
+    database-platform: org.hibernate.dialect.SQLServer2012Dialect
+
+server:
+  port:  8080
